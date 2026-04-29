@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REVARCANA — Tienda Oficial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+    <canvas id="particle-canvas"></canvas>
+
+    <nav>
+      <a href="index.html" class="nav-logo">Rev<span>ar</span>cana</a>
+      <ul class="nav-links">
+        <li>
+          <a href="index.html#lore" data-es="Historia" data-en="Lore"
+            >Historia</a
+          >
+        </li>
+        <li>
+          <a href="index.html#features" data-es="El Juego" data-en="The Game"
+            >El Juego</a
+          >
+        </li>
+        <li>
+          <a href="merch.html" data-es="Tienda" data-en="Store" class="active"
+            >Tienda</a
+          >
+        </li>
+        <li>
+          <a href="index.html#download" data-es="Descargar" data-en="Download"
+            >Descargar</a
+          >
+        </li>
+      </ul>
+      <div class="nav-lang">
+        <button class="lang-btn active" data-lang="es">ES</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </nav>
+
+    <header class="page-hero">
+      <p
+        class="page-hero-eyebrow"
+        data-es="Colección Oficial"
+        data-en="Official Collection"
+      >
+        Colección Oficial
+      </p>
+      <h1 class="page-hero-title">
+        <em data-es="Arcana" data-en="Arcana">Arcana</em>
+        <span data-es="Merch" data-en="Merch">Merch</span>
+      </h1>
+      <p
+        class="page-hero-sub"
+        data-es="Objetos físicos del universo de Revarcana. Cada pieza lleva consigo el peso simbólico de los arcanos."
+        data-en="Physical objects from the Revarcana universe. Each piece carries the symbolic weight of the arcana."
+      >
+        Objetos físicos del universo de Revarcana. Cada pieza lleva consigo el
+        peso simbólico de los arcanos.
+      </p>
+    </header>
+
+    <div id="arcana-strip" aria-hidden="true">
+      <div class="arcana-scroll" id="arcanaScroll"></div>
+    </div>
+
+    <div class="merch-filters" role="group" aria-label="Filtrar productos">
+      <button
+        class="filter-btn active"
+        data-filter="all"
+        data-es="Todo"
+        data-en="All"
+      >
+        Todo
+      </button>
+      <button
+        class="filter-btn"
+        data-filter="ropa"
+        data-es="Ropa"
+        data-en="Apparel"
+      >
+        Ropa
+      </button>
+      <button
+        class="filter-btn"
+        data-filter="coleccionable"
+        data-es="Coleccionables"
+        data-en="Collectibles"
+      >
+        Coleccionables
+      </button>
+      <button
+        class="filter-btn"
+        data-filter="papeleria"
+        data-es="Papelería"
+        data-en="Stationery"
+      >
+        Papelería
+      </button>
+      <button
+        class="filter-btn"
+        data-filter="edicion"
+        data-es="Edición Limitada"
+        data-en="Limited Edition"
+      >
+        Edición Limitada
+      </button>
+    </div>
+
+    <div class="merch-banner">
+      <div class="merch-banner-inner">
+        <div class="merch-banner-text">
+          <p
+            class="banner-label"
+            data-es="Lanzamiento exclusivo"
+            data-en="Exclusive Launch"
+          >
+            Lanzamiento exclusivo
+          </p>
+          <h3
+            data-es="La Baraja <em>Revarcana</em>"
+            data-en="The <em>Revarcana</em> Deck"
+          >
+            La Baraja <em>Revarcana</em>
+          </h3>
+          <p
+            data-es="22 cartas ilustradas a mano. Arcanos Mayores rediseñados en el universo tridimensional del juego. Edición numerada, con estuche de tela y lámina de arte firmada."
+            data-en="22 hand-illustrated cards. Major Arcana redesigned within the game's three-dimensional universe. Numbered edition, with cloth case and signed art print."
+          >
+            22 cartas ilustradas a mano. Arcanos Mayores rediseñados en el
+            universo tridimensional del juego. Edición numerada, con estuche de
+            tela y lámina de arte firmada.
+          </p>
+        </div>
+        <a
+          href="#"
+          class="btn-primary"
+          data-es="Pre-ordenar — 68€"
+          data-en="Pre-order — €68"
+          >Pre-ordenar — 68€</a
+        >
+      </div>
+    </div>
+
+    <div class="merch-grid-wrap">
+      <div class="merch-grid" id="merchGrid">
+        <!-- 01 Camiseta El Loco -->
+        <article class="product-card" data-category="ropa">
+          <div class="product-img-wrap">
+            <div class="product-placeholder">
+              <span class="product-placeholder-symbol">✦</span>
+              <span class="product-placeholder-label">Imagen del producto</span>
+            </div>
+          </div>
+          <div class="product-info">
+            <p class="product-arcana" data-es="Arcano 0" data-en="Arcana 0">
+              Arcano 0
+            </p>
+            <h3
+              class="product-name"
+              data-es="Camiseta El Loco"
+              data-en="The Fool Tee"
+            >
+              Camiseta El Loco
+            </h3>
+            <p
+              class="product-desc"
+              data-es="100% algodón orgánico. Serigrafía de alta calidad con el diseño 3D del personaje sobre fondo negro profundo. Unisex, tallas XS–XXL."
+              data-en="100% organic cotton. High-quality silkscreen with the character's 3D design on deep black. Unisex, sizes XS–XXL."
+            >
+              100% algodón orgánico. Serigrafía de alta calidad con el diseño 3D
+              del personaje sobre fondo negro profundo. Unisex, tallas XS–XXL.
+            </p>
+            <div class="product-footer">
+              <p class="product-price">34<span>€</span></p>
+              <span class="product-cta" data-es="Añadir" data-en="Add"
+                >Añadir</span
+              >
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="papeleria">
+          <div class="product-img-wrap">
+            <div class="product-placeholder">
+              <span class="product-placeholder-symbol">⊗</span>
+              <span class="product-placeholder-label">Imagen del producto</span>
+            </div>
+            <span class="product-badge" data-es="Nuevo" data-en="New"
+              >Nuevo</span
+            >
+          </div>
+          <div class="product-info">
+            <p class="product-arcana" data-es="Arcano XVI" data-en="Arcana XVI">
+              Arcano XVI
+            </p>
+            <h3
+              class="product-name"
+              data-es="Póster La Torre"
+              data-en="The Tower Poster"
+            >
+              Póster La Torre
+            </h3>
+            <p
+              class="product-desc"
+              data-es="Impresión giclée 50×70 cm sobre papel mate 280g. Render 3D del entorno de La Torre, exclusivo para esta colección. Sin marco."
+              data-en="Giclée print 50×70 cm on 280g matte paper. 3D render of The Tower environment, exclusive to this collection. Unframed."
+            >
+              Impresión giclée 50×70 cm sobre papel mate 280g. Render 3D del
+              entorno de La Torre, exclusivo para esta colección. Sin marco.
+            </p>
+            <div class="product-footer">
+              <p class="product-price">28<span>€</span></p>
+              <span class="product-cta" data-es="Añadir" data-en="Add"
+                >Añadir</span
+              >
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="coleccionable">
+          <div class="product-img-wrap">
+            <div class="product-placeholder">
+              <span class="product-placeholder-symbol">★</span>
+              <span class="product-placeholder-label">Imagen del producto</span>
+            </div>
+          </div>
+          <div class="product-info">
+            <p
+              class="product-arcana"
+              data-es="Arcano XVII"
+              data-en="Arcana XVII"
+            >
+              Arcano XVII
+            </p>
+            <h3
+              class="product-name"
+              data-es="Pin La Estrella"
+              data-en="The Star Pin"
+            >
+              Pin La Estrella
+            </h3>
+            <p
+              class="product-desc"
+              data-es="Pin de esmalte duro 3,5 cm. Acabado dorado con detalles en esmalte negro y burdeos. Cierre de mariposa. Edición de 500 unidades numeradas."
+              data-en="Hard enamel pin 3.5 cm. Gold finish with black and burgundy enamel details. Butterfly clasp. Edition of 500 numbered units."
+            >
+              Pin de esmalte duro 3,5 cm. Acabado dorado con detalles en esmalte
+              negro y burdeos. Cierre de mariposa. Edición de 500 unidades
+              numeradas.
+            </p>
+            <div class="product-footer">
+              <p class="product-price">14<span>€</span></p>
+              <span class="product-cta" data-es="Añadir" data-en="Add"
+                >Añadir</span
+              >
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="edicion">
+          <div class="product-img-wrap">
+            <div class="product-placeholder">
+              <span class="product-placeholder-symbol">◈</span>
+              <span class="product-placeholder-label">Imagen del producto</span>
+            </div>
+            <span
+              class="product-badge"
+              data-es="Ed. Limitada"
+              data-en="Limited Ed."
+              >Ed. Limitada</span
+            >
+          </div>
+          <div class="product-info">
+            <p
+              class="product-arcana"
+              data-es="Colección completa"
+              data-en="Full Collection"
+            >
+              Colección completa
+            </p>
+            <h3
+              class="product-name"
+              data-es="Artbook Oficial"
+              data-en="Official Artbook"
+            >
+              Artbook Oficial
+            </h3>
+            <p
+              class="product-desc"
+              data-es="160 páginas tapa dura. Todo el proceso de diseño de Revarcana: bocetos, modelados 3D, diseño de personajes, entornos y sistema visual. Prólogo del diseñador."
+              data-en="160 hardcover pages. The complete Revarcana design process: sketches, 3D models, character design, environments and visual system. Designer's prologue."
+            >
+              160 páginas tapa dura. Todo el proceso de diseño de Revarcana:
+              bocetos, modelados 3D, diseño de personajes, entornos y sistema
+              visual. Prólogo del diseñador.
+            </p>
+            <div class="product-footer">
+              <p class="product-price">52<span>€</span></p>
+              <span class="product-cta" data-es="Añadir" data-en="Add"
+                >Añadir</span
+              >
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="ropa">
+          <div class="product-img-wrap">
+            <div class="product-placeholder">
+              <span class="product-placeholder-symbol">⊕</span>
+              <span class="product-placeholder-label">Imagen del producto</span>
+            </div>
+          </div>
+          <div class="product-info">
+            <p
+              class="product-arcana"
+              data-es="Arcano XIII"
+              data-en="Arcana XIII"
+            >
+              Arcano XIII
+            </p>
+            <h3
+              class="product-name"
+              data-es="Hoodie La Muerte"
+              data-en="Death Hoodie"
+            >
+              Hoodie La Muerte
+            </h3>
+            <p
+              class="product-desc"
+              data-es="Sudadera unisex pesada 400g/m². Bordado en pecho con el símbolo del Arcano XIII y estampado en espalda. Disponible en negro carbón."
+              data-en="Heavyweight unisex hoodie 400g/m². Front embroidery with Arcana XIII symbol and back print. Available in charcoal black."
+            >
+              Sudadera unisex pesada 400g/m². Bordado en pecho con el símbolo
+              del Arcano XIII y estampado en espalda. Disponible en negro
+              carbón.
+            </p>
+            <div class="product-footer">
+              <p class="product-price">68<span>€</span></p>
+              <span class="product-cta" data-es="Añadir" data-en="Add"
+                >Añadir</span
+              >
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="papeleria">
+          <div class="product-img-wrap">
+            <div class="product-placeholder">
+              <span class="product-placeholder-symbol">☽</span>
+              <span class="product-placeholder-label">Imagen del producto</span>
+            </div>
+          </div>
+          <div class="product-info">
+            <p class="product-arcana" data-es="Set completo" data-en="Full Set">
+              Set completo
+            </p>
+            <h3
+              class="product-name"
+              data-es="Set Postales Arcana"
+              data-en="Arcana Postcard Set"
+            >
+              Set Postales Arcana
+            </h3>
+            <p
+              class="product-desc"
+              data-es="22 postales 10×15 cm, una por cada Arcano Mayor. Impresión a doble cara en papel satinado 350g. Empaquetadas con banda de papel dorada."
+              data-en="22 postcards 10×15 cm, one per Major Arcana. Double-sided print on 350g glossy paper. Packaged with a gold paper band."
+            >
+              22 postales 10×15 cm, una por cada Arcano Mayor. Impresión a doble
+              cara en papel satinado 350g. Empaquetadas con banda de papel
+              dorada.
+            </p>
+            <div class="product-footer">
+              <p class="product-price">18<span>€</span></p>
+              <span class="product-cta" data-es="Añadir" data-en="Add"
+                >Añadir</span
+              >
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2025 Revarcana — TFG Diseño Gráfico</p>
+      <p data-es="Todos los derechos reservados" data-en="All rights reserved">
+        Todos los derechos reservados
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="merch.js"></script>
+  </body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REVARCANA — The Arcane Roguelite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+    <canvas id="particle-canvas"></canvas>
+
+    <nav>
+      <a href="index.html" class="nav-logo">Revarcana</a>
+      <ul class="nav-links">
+        <li><a href="#lore" data-es="Historia" data-en="Lore">Historia</a></li>
+        <li>
+          <a href="#features" data-es="El Juego" data-en="The Game">El Juego</a>
+        </li>
+        <li>
+          <a href="merch.html" data-es="Tienda" data-en="Store">Tienda</a>
+        </li>
+        <li>
+          <a href="#download" data-es="Descargar" data-en="Download"
+            >Descargar</a
+          >
+        </li>
+      </ul>
+      <div class="nav-lang">
+        <button class="lang-btn active" data-lang="es">ES</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </nav>
+
+    <section id="hero">
+      <svg
+        class="hero-sigil"
+        viewBox="0 0 60 60"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <circle
+          cx="30"
+          cy="30"
+          r="28"
+          stroke="#C9A84C"
+          stroke-width="0.5"
+          opacity="0.4"
+        />
+        <circle
+          cx="30"
+          cy="30"
+          r="20"
+          stroke="#C9A84C"
+          stroke-width="0.5"
+          opacity="0.25"
+        />
+        <polygon
+          points="30,5 35.8,22.5 54,22.5 39.1,33.5 44.9,51 30,40 15.1,51 20.9,33.5 6,22.5 24.2,22.5"
+          stroke="#C9A84C"
+          stroke-width="0.6"
+          fill="none"
+          opacity="0.5"
+        />
+      </svg>
+
+      <div class="hero-content">
+        <p
+          class="hero-eyebrow"
+          data-es="El Roguelite del Arcano Mayor"
+          data-en="The Major Arcana Roguelite"
+        >
+          El Roguelite del Arcano Mayor
+        </p>
+        <h1 class="hero-title">
+          Revarcana
+          <span
+            class="accent"
+            data-es="Desafía el destino"
+            data-en="Defy the arcana"
+            >Desafía el destino</span
+          >
+        </h1>
+        <div class="hero-divider" aria-hidden="true">
+          <div class="divider-diamond"></div>
+        </div>
+        <p
+          class="hero-description"
+          data-es="Cada partida es una tirada. Cada decisión, un arcano. En Revarcana, el tarot no es decoración — es el sistema que rige el mundo, los personajes y tu destino."
+          data-en="Every run is a reading. Every choice, an arcana. In Revarcana, tarot is not decoration — it is the system that governs the world, the characters, and your fate."
+        >
+          Cada partida es una tirada. Cada decisión, un arcano. En Revarcana, el
+          tarot no es decoración — es el sistema que rige el mundo, los
+          personajes y tu destino.
+        </p>
+        <div class="hero-ctas">
+          <a
+            href="#download"
+            class="btn-primary"
+            data-es="Jugar Ahora"
+            data-en="Play Now"
+            >Jugar Ahora</a
+          >
+          <a
+            href="#lore"
+            class="btn-secondary"
+            data-es="Descubrir el Lore"
+            data-en="Discover the Lore"
+            >Descubrir el Lore</a
+          >
+        </div>
+        <div class="platform-badges">
+          <div class="platform-badge">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M11.979 0C5.678 0 .511 4.86.052 11.02l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.606 0 11.979 0z"
+              />
+            </svg>
+            <span>Steam</span>
+          </div>
+          <div class="platform-badge">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+              />
+            </svg>
+            <span data-es="Próximamente" data-en="Coming Soon"
+              >Próximamente</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span data-es="Descubre" data-en="Discover">Descubre</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <div id="arcana-strip" aria-hidden="true">
+      <div class="arcana-scroll" id="arcanaScroll"></div>
+    </div>
+
+    <section id="lore">
+      <div class="lore-text">
+        <p class="lore-label" data-es="Historia del Mundo" data-en="World Lore">
+          Historia del Mundo
+        </p>
+        <h2
+          class="lore-heading"
+          data-es="El Arcano que <em>lo rige todo</em>"
+          data-en="The Arcana that <em>governs all</em>"
+        >
+          El Arcano que <em>lo rige todo</em>
+        </h2>
+        <p
+          class="lore-body"
+          data-es="En un plano fracturado donde el orden del cosmos fue roto, los veintidós Arcanos Mayores se dispersaron como fragmentos de un oráculo destruido. Cada uno encarna un arquetipo, una fuerza primordial que moldea la realidad a su alrededor."
+          data-en="In a fractured plane where the cosmic order was shattered, the twenty-two Major Arcana scattered like fragments of a broken oracle. Each embodies an archetype — a primordial force that shapes reality around it."
+        >
+          En un plano fracturado donde el orden del cosmos fue roto, los
+          veintidós Arcanos Mayores se dispersaron como fragmentos de un oráculo
+          destruido. Cada uno encarna un arquetipo, una fuerza primordial que
+          moldea la realidad a su alrededor.
+        </p>
+        <p
+          class="lore-body"
+          data-es="Tú eres El Loco — el único sin número, el sin ataduras. Tu camino es el único que puede restaurar o consumir el equilibrio. Cada tirada cambia el mundo. Cada muerte es un nuevo comienzo."
+          data-en="You are The Fool — the only one without number, the unbound. Your path is the only one that can restore or consume the balance. Every draw changes the world. Every death is a new beginning."
+        >
+          Tú eres El Loco — el único sin número, el sin ataduras. Tu camino es
+          el único que puede restaurar o consumir el equilibrio. Cada tirada
+          cambia el mundo. Cada muerte es un nuevo comienzo.
+        </p>
+      </div>
+      <div class="tarot-stack" aria-hidden="true">
+        <div class="tarot-card">
+          <div class="tarot-card-inner">
+            <span class="tarot-roman">I</span
+            ><span class="tarot-symbol">☿</span>
+            <span class="tarot-name" data-es="El Mago" data-en="The Magician"
+              >El Mago</span
+            >
+          </div>
+        </div>
+        <div class="tarot-card">
+          <div class="tarot-card-inner">
+            <span class="tarot-roman">0</span
+            ><span class="tarot-symbol">✦</span>
+            <span class="tarot-name" data-es="El Loco" data-en="The Fool"
+              >El Loco</span
+            >
+          </div>
+        </div>
+        <div class="tarot-card">
+          <div class="tarot-card-inner">
+            <span class="tarot-roman">XII</span
+            ><span class="tarot-symbol">⊕</span>
+            <span
+              class="tarot-name"
+              data-es="El Colgado"
+              data-en="The Hanged Man"
+              >El Colgado</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="features-header">
+        <p class="lore-label" data-es="Mecánicas" data-en="Mechanics">
+          Mecánicas
+        </p>
+        <h2
+          class="lore-heading"
+          data-es="Un sistema simbólico <em>jugable</em>"
+          data-en="A symbolic system <em>you can play</em>"
+        >
+          Un sistema simbólico <em>jugable</em>
+        </h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-num">01</div>
+          <div
+            class="feature-title"
+            data-es="Tiradas Procedurales"
+            data-en="Procedural Draws"
+          >
+            Tiradas Procedurales
+          </div>
+          <p
+            class="feature-desc"
+            data-es="Cada run genera una tirada única. Los arcanos que aparecen dictan los enemigos, entornos y habilidades disponibles en esa partida."
+            data-en="Each run generates a unique spread. The arcana drawn dictate the enemies, environments and abilities available in that run."
+          >
+            Cada run genera una tirada única. Los arcanos que aparecen dictan
+            los enemigos, entornos y habilidades disponibles en esa partida.
+          </p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-num">02</div>
+          <div
+            class="feature-title"
+            data-es="Arquetipos 3D"
+            data-en="3D Archetypes"
+          >
+            Arquetipos 3D
+          </div>
+          <p
+            class="feature-desc"
+            data-es="Veintidós personajes únicos, cada uno encarnación visual de un Arcano Mayor, diseñados desde cero con dirección de arte tridimensional."
+            data-en="Twenty-two unique characters, each a visual incarnation of a Major Arcana, designed from scratch with three-dimensional art direction."
+          >
+            Veintidós personajes únicos, cada uno encarnación visual de un
+            Arcano Mayor, diseñados desde cero con dirección de arte
+            tridimensional.
+          </p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-num">03</div>
+          <div
+            class="feature-title"
+            data-es="Identidad Narrativa"
+            data-en="Narrative Identity"
+          >
+            Identidad Narrativa
+          </div>
+          <p
+            class="feature-desc"
+            data-es="El diseño gráfico y la narrativa son inseparables. Cada carta, diálogo y entorno refuerza el lenguaje simbólico del tarot."
+            data-en="Graphic design and narrative are inseparable. Every card, dialogue and environment reinforces the symbolic language of tarot."
+          >
+            El diseño gráfico y la narrativa son inseparables. Cada carta,
+            diálogo y entorno refuerza el lenguaje simbólico del tarot.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="download">
+      <p class="download-label" data-es="Disponible en" data-en="Available on">
+        Disponible en
+      </p>
+      <h2
+        class="download-title"
+        data-es="¿Listo para <em>tu tirada?</em>"
+        data-en="Ready for <em>your reading?</em>"
+      >
+        ¿Listo para <em>tu tirada?</em>
+      </h2>
+      <p
+        class="download-sub"
+        data-es="Descarga Revarcana y descubre qué arcano eres."
+        data-en="Download Revarcana and discover which arcana you are."
+      >
+        Descarga Revarcana y descubre qué arcano eres.
+      </p>
+      <a
+        href="https://store.steampowered.com"
+        class="steam-btn"
+        target="_blank"
+        rel="noopener"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M11.979 0C5.678 0 .511 4.86.052 11.02l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.606 0 11.979 0z"
+          />
+        </svg>
+        <span data-es="Ver en Steam" data-en="View on Steam">Ver en Steam</span>
+      </a>
+    </section>
+
+    <footer>
+      <p>© 2025 Revarcana — TFG Diseño Gráfico</p>
+      <p data-es="Todos los derechos reservados" data-en="All rights reserved">
+        Todos los derechos reservados
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
